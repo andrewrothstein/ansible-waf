@@ -1,5 +1,3 @@
 ---
-waf_version: 1.7.15
-waf_archive: 'waf-{{waf_version}}.tar.bz2'
-waf_archive_url: 'https://waf.googlecode.com/files/{{waf_archive}}'
-waf_target_dir: '/opt/waf-{{waf_version}}'
+waf_exe : 'waf-{{waf_ver}}'
+waf_url : '{{waf_mirror}}/{{waf_exe}}'
