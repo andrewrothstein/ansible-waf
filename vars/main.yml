@@ -1,3 +1,6 @@
 ---
-waf_exe : 'waf-{{waf_ver}}'
-waf_url : '{{waf_mirror}}/{{waf_exe}}'
+waf_exe : waf-{{ waf_ver }}
+waf_url : '{{ waf_mirror }}/{{ waf_exe }}'
+waf_checksum: '{{ waf_checksums[waf_ver] }}'
+waf_installed_exe: '{{ waf_install_dir }}/{{ waf_exe }}'
+waf_installed_link: '{{ waf_install_dir }}/waf'

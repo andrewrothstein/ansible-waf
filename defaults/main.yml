@@ -1,3 +1,7 @@
 ---
-waf_ver: 1.8.16
-waf_mirror: 'https://waf.io'
+waf_ver: 2.0.20
+waf_mirror: https://waf.io
+waf_install_dir: /usr/local/bin
+waf_checksums:
+  # https://waf.io/waf-2.0.20
+  '2.0.20': sha256:bf971e98edc2414968a262c6aa6b88541a26c3cd248689c89f4c57370955ee7f

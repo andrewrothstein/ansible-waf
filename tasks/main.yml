@@ -1,12 +1,22 @@
 ---
-- name: download waf executable
-  get_url: >
-    url={{waf_url}}
-    dest=/usr/local/bin/{{waf_exe}}
-    mode=0755
+- name: downloading {{ waf_url }}
+  become: yes
+  become_user: root
+  get_url:
+    url: '{{ waf_url }}'
+    dest: '{{ waf_installed_exe }}'
+    checksum: '{{ waf_checksum }}'
+    mode: 0755
   
-- name: link waf
-  file: src='/usr/local/bin/{{waf_exe}}' dest=/usr/local/bin/waf state=link
+- name: linking {{ waf_installed_exe }} to {{ waf_installed_link }}
+  become: yes
+  become_user: root
+  file:
+    src: '{{ waf_installed_exe }}'
+    dest: '{{ waf_installed_link }}'
+    state: link
 
-- name: seed waf
-  command: /usr/local/bin/waf --version
+- name: seed {{ waf_installed_exe }}
+  become: yes
+  become_user: root
+  command: '{{ waf_installed_exe }} configure'
